@@ -1,0 +1,67 @@
+<div class="container">
+
+<h2>
+<mat-icon>hotel</mat-icon>
+My Bookings
+</h2>
+
+<div class="card" *ngFor="let b of bookings">
+
+<div class="card-header">
+
+<h3>{{b.room.hotel.name}}</h3>
+
+<span class="status"
+[ngClass]="b.status">
+{{b.status}}
+</span>
+
+</div>
+
+
+<div class="card-body">
+
+<p>
+<mat-icon>location_on</mat-icon>
+{{b.room.hotel.location}}
+</p>
+
+<p>
+<mat-icon>bed</mat-icon>
+Room : {{b.room.roomType}}
+</p>
+
+<p>
+<mat-icon>calendar_today</mat-icon>
+{{b.checkInDate | date}}
+→
+{{b.checkOutDate | date}}
+</p>
+
+<p>
+<mat-icon>currency_rupee</mat-icon>
+{{b.totalPrice}}
+</p>
+
+</div>
+
+
+<div class="card-footer">
+
+<button
+mat-raised-button
+color="warn"
+*ngIf="b.status=='Booked'"
+(click)="cancel(b.bookingId)"
+>
+
+<mat-icon>cancel</mat-icon>
+Cancel
+
+</button>
+
+</div>
+
+</div>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="dashboard-container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h2>🏨 Hotel Booking System</h2>
+  
+      <div class="header-right">
+        <button>My Bookings</button>
+        <button (click)="logout()">Logout</button>
+      </div>
+    </div>
+  
+    <!-- SEARCH -->
+    <div class="search-box">
+      <h2>Find Your Perfect Stay</h2>
+  
+      <div class="filters">
+  
+        <select [(ngModel)]="selectedLocation">
+          <option value="">All Locations</option>
+          <option *ngFor="let loc of locations" [value]="loc">
+            {{loc}}
+          </option>
+        </select>
+  
+        <input type="number" [(ngModel)]="maxPrice" placeholder="Max Price">
+  
+        <button (click)="filterHotels()">Search Hotels</button>
+  
+      </div>
+    </div>
+  
+    <!-- HOTEL CARDS -->
+    <div class="hotel-list">
+  
+      <div class="hotel-card" *ngFor="let hotel of filteredHotels">
+  
+        <img [src]="hotel.image" />
+  
+        <div class="hotel-content">
+          <h3>{{hotel.name}}</h3>
+          <p>📍 {{hotel.location}}</p>
+          <p class="price">₹ {{hotel.price}}</p>
+  
+          <button>View Rooms</button>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>

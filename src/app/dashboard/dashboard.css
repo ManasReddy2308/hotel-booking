@@ -1,0 +1,63 @@
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* SEARCH BOX */
+  .search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  
+  /* HOTEL GRID */
+  .hotel-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+  }
+  
+  /* CARD */
+  .hotel-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+  }
+  
+  .hotel-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* IMAGE */
+  .hotel-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* CONTENT */
+  .hotel-content {
+    padding: 15px;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #0f172a;
+  }

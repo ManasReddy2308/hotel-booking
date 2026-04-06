@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { BookingHistoryComponent } from './booking-history/booking-history';
 import { RouterOutlet } from '@angular/router';
-
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [BookingHistoryComponent, RouterOutlet],
+  templateUrl: './app.html'
 })
 export class App {
-  protected readonly title = signal('hotel-booking-frontend');
+
 }

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card">
+
+    <h2><i class="fa-solid fa-hotel"></i> Book Your Room</h2>
+
+    <div class="form-group">
+      <label><i class="fa-solid fa-calendar-check"></i> Check-In</label>
+      <input type="date" [(ngModel)]="checkIn">
+    </div>
+
+    <div class="form-group">
+      <label><i class="fa-solid fa-calendar-xmark"></i> Check-Out</label>
+      <input type="date" [(ngModel)]="checkOut">
+    </div>
+
+    <div class="price-box">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+      Total Price: <strong>{{totalPrice}}</strong>
+    </div>
+
+    <button class="btn check" (click)="checkAvailability()">
+      <i class="fa-solid fa-magnifying-glass"></i> Check Availability
+    </button>
+
+    <p *ngIf="isAvailable === true" class="success">
+      <i class="fa-solid fa-circle-check"></i> Available
+    </p>
+
+   <p *ngIf="!isAvailable && isAvailable !== null" class="error">
+      <i class="fa-solid fa-circle-xmark"></i> Not Available
+    </p>
+
+    <button class="btn book" (click)="bookRoom()" [disabled]="!isAvailable">
+      <i class="fa-solid fa-bed"></i> Book Now
+    </button>
+
+  </div>
+</div>
